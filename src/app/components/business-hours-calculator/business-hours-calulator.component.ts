@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import * as data from "../../data/business-hours.json";
 import { DayOfWeek } from "../../enums/day-of-week";
 import { HttpClient } from '@angular/common/http';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'business-hours-calculator',
@@ -11,8 +12,6 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class BusinessHoursCalculatorComponent implements OnInit {
-
-  @Output() status = new EventEmitter<boolean>();
 
   message: string = "";
   subMessage: string = "";
@@ -60,8 +59,6 @@ export class BusinessHoursCalculatorComponent implements OnInit {
       this.subMessage = "We will be open next at " + this.getNextOpenTime(date);
       this.isBusinessHours = false;
     }
-
-    this.status.emit(this.isBusinessHours);
   }
 
   isWorkDay(date: Date): boolean {
@@ -101,9 +98,9 @@ export class BusinessHoursCalculatorComponent implements OnInit {
   private getNextOpenTime(date: Date): string {
     let day: string = DayOfWeek[date.getDay()];
     let time: number = parseInt(this.doubleDigitFormat(date.getHours().toString()) + this.doubleDigitFormat(date.getMinutes().toString()));
-    let workHours: [string, string] = data.work_hours[day];
+    let workHours: [string, string] = data.work_hours[day] ? data.work_hours[day] : ["", ""];
     let startTime: number = parseInt(this.getTimeString(workHours[0]));
-    let workBreaks: [string, string][] = data.work_breaks[day];
+    let workBreaks: [string, string][] = data.work_breaks[day] ? data.work_breaks[day] : ["", ""];
 
     if (this.isWorkDay(date) && !this.isPublicHoliday(date)) {
       if (this.isWorkHours(date)) {
@@ -122,10 +119,15 @@ export class BusinessHoursCalculatorComponent implements OnInit {
       }
     } 
     
-    var newDate = new Date();
+    var newDate = new Date(date);
     newDate.setDate(date.getDate() + 1);
     newDate.setHours(0, 0, 0, 0);
     return this.getNextOpenTime(newDate);
+
+    /**
+     * So I couldn't think of a way to fit recursion into finding public holidays,
+     * so here is some recursion to make up for that :)
+     */
   }
 
   private getTimeString(time: string): string {
