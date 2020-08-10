@@ -2,16 +2,15 @@ import { Component, OnInit, Output, EventEmitter, NgZone } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import * as data from "../../data/business-hours.json";
 import { DayOfWeek } from "../../enums/day-of-week";
-import { PublicHoliday } from "../../interfaces/public-holiday.interface";
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'business-day-calculator',
-  templateUrl: './business-day-calculator.component.html',
-  styleUrls: ['./business-day-calculator.component.scss']
+  selector: 'business-hours-calculator',
+  templateUrl: './business-hours-calculator.component.html',
+  styleUrls: ['./business-hours-calculator.component.scss']
 })
 
-export class BusinessDayCalculatorComponent implements OnInit {
+export class BusinessHoursCalculatorComponent implements OnInit {
 
   @Output() status = new EventEmitter<boolean>();
 

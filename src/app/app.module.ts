@@ -12,13 +12,13 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { NgxMatDatetimePickerModule, NgxMatNativeDateModule } from '@angular-material-components/datetime-picker';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { BusinessDayCalculatorComponent } from "./components/business-day-calculator/business-day-calulator.component"
+import { BusinessHoursCalculatorComponent } from "./components/business-hours-calculator/business-hours-calulator.component"
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BusinessDayCalculatorComponent
+    BusinessHoursCalculatorComponent
   ],
   imports: [
     BrowserModule,
