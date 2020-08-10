@@ -18,7 +18,6 @@ export class BusinessHoursCalculatorComponent implements OnInit {
   subMessage: string = "";
   isBusinessHours: boolean;
   date: Date;
-  time: number;
   dateControl = new FormControl(new Date()); // Sets the default date to now
 
   constructor(
@@ -30,7 +29,6 @@ export class BusinessHoursCalculatorComponent implements OnInit {
   ngOnInit() {
     this.dateControl.valueChanges.subscribe(value => {
       this.date = value,
-      this.time = parseInt(this.doubleDigitFormat(this.date.getHours().toString()) + this.doubleDigitFormat(this.date.getMinutes().toString()));
       this.calculateBusinessHours(this.date)
     })
   }
@@ -83,17 +81,19 @@ export class BusinessHoursCalculatorComponent implements OnInit {
 
   isWorkHours(date: Date): boolean {
     let day: string = DayOfWeek[date.getDay()];
+    let time: number = parseInt(this.doubleDigitFormat(date.getHours().toString()) + this.doubleDigitFormat(date.getMinutes().toString()));
     let workHours: [string, string] = data.work_hours[day];
 
-    return this.isInTimeRange(this.time, workHours);
+    return this.isInTimeRange(time, workHours);
   }
 
   isBreak(date: Date): boolean {
     let day: string = DayOfWeek[date.getDay()];
+    let time: number = parseInt(this.doubleDigitFormat(date.getHours().toString()) + this.doubleDigitFormat(date.getMinutes().toString()));
     let workBreaks: [string, string][] = data.work_breaks[day];
 
     return workBreaks.some(value => {
-      return this.isInTimeRange(this.time, value)
+      return this.isInTimeRange(time, value)
     })
   }
 
@@ -135,7 +135,7 @@ export class BusinessHoursCalculatorComponent implements OnInit {
     let startTime = parseInt(this.getTimeString(timeRange[0]));
     let endTime = parseInt(this.getTimeString(timeRange[1]));
 
-    return this.time > startTime && this.time < endTime;
+    return time > startTime && time < endTime;
   }
 
   private doubleDigitFormat(n) {
