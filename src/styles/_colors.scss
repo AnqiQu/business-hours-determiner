@@ -1,0 +1,138 @@
+// Individual colors in the theme
+$space-cadet: #201E36;
+$cream: #FAFAC6;
+$dark-turquoise: #62CCD4;
+$crimson: #D7263D;
+
+// Palettes created using the theme colors
+$space-cadette-palette: (
+    50 : #e4e4e7,
+    100 : #bcbcc3,
+    200 : #908f9b,
+    300 : #636272,
+    400 : #414054,
+    500 : #201e36,
+    600 : #1c1a30,
+    700 : #181629,
+    800 : #131222,
+    900 : #0b0a16,
+    A100 : #6d58ff,
+    A200 : #4125ff,
+    A400 : #1e00f1,
+    A700 : #1b00d8,
+    contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    )
+);
+
+$cream-palette: (
+    50 : #fefef8,
+    100 : #fefeee,
+    200 : #fdfde3,
+    300 : #fcfcd7,
+    400 : #fbfbcf,
+    500 : #fafac6,
+    600 : #f9f9c0,
+    700 : #f9f9b9,
+    800 : #f8f8b1,
+    900 : #f6f6a4,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$dark-turquoise-palette: (
+    50 : #ecf9fa,
+    100 : #d0f0f2,
+    200 : #b1e6ea,
+    300 : #91dbe1,
+    400 : #7ad4da,
+    500 : #62ccd4,
+    600 : #5ac7cf,
+    700 : #50c0c9,
+    800 : #46b9c3,
+    900 : #34adb9,
+    A100 : #ffffff,
+    A200 : #cffaff,
+    A400 : #9cf6ff,
+    A700 : #82f3ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$crimson-palette: (
+    50 : #fae5e8,
+    100 : #f3bec5,
+    200 : #eb939e,
+    300 : #e36777,
+    400 : #dd475a,
+    500 : #d7263d,
+    600 : #d32237,
+    700 : #cd1c2f,
+    800 : #c71727,
+    900 : #be0d1a,
+    A100 : #ffebec,
+    A200 : #ffb8bb,
+    A400 : #ff858b,
+    A700 : #ff6b73,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);

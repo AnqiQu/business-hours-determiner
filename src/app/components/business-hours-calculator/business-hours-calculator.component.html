@@ -1,7 +1,7 @@
-<div>
-  <div>
+<div class="calculator-container">
+  <div class="datetime-picker">
     <mat-form-field>
-      <label for="dateTime">Select a date and time</label>
+      <label for="dateTime"><small>Select a date and time</small></label>
       <input matInput 
             id="dateTime"
             [ngxMatDatetimePicker]="picker"
@@ -10,8 +10,10 @@
       <ngx-mat-datetime-picker #picker [enableMeridian]="true"></ngx-mat-datetime-picker>
     </mat-form-field>
   </div>
-  <span *ngIf="date">Selected date and time: <strong>{{ date.toLocaleString() }}</strong></span>
-  <h2>{{ message }}</h2>
-  <h5>{{ subMessage }}</h5>
+  <div class="message">
+    <span *ngIf="date">Selected date and time: <strong>{{ date.toLocaleString() }}</strong></span>
+    <h1>{{ message }}</h1>
+    <h5>{{ subMessage }}</h5>
+  </div>
 </div>
 

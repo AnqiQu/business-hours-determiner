@@ -1,0 +1,25 @@
+.calculator-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .datetime-picker {
+        ::ng-deep .mat-form-field-flex {
+            align-items: flex-end;
+        }
+    }
+
+    .message {
+        padding: 2rem;
+        margin: 1rem;
+        text-align: center;
+        border: 0.5rem solid white;
+        border-radius: 10px;
+
+        > * {
+            margin: 1rem;
+        }
+    }
+}

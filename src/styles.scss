@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./styles/theme";
+
+@include mat-core($typography);
+@include mat-base-typography($typography);
+@include angular-material-theme($theme);
+@include angular-material-typography($typography);
+
+@import "~bootstrap/scss/mixins";
+
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: "Raleway", sans-serif !important;
+    color: $text !important;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  src: local('Material Icons'), 
+       local('MaterialIcons-Regular'), 
+       url(https://fonts.gstatic.com/s/materialicons/v21/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    height: auto !important;
+}
+
+.app-body {
+    width: 100%;
+    min-height: 100vh;
+    background: $background-gradient;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

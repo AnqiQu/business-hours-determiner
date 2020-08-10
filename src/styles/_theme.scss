@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap');
+
+@import '~@angular/material/theming';
+@import "colors";
+
+$primary-palette: mat-palette($dark-turquoise-palette);
+$primary: $dark-turquoise;
+$secondary-palette: mat-palette($cream-palette);
+$secondary: $cream;
+$accent-palette: mat-palette($space-cadette-palette);
+$accent: $space-cadet;
+$text: $space-cadet;
+$warn-palette: mat-palette($crimson-palette);
+$warn: $crimson;
+
+$background-gradient: linear-gradient(-45deg, 
+rgba(35,213,171,1) 0%, 
+rgba(35,194,188,1) 10%, 
+rgba(52,177,217,1) 20%, 
+rgba(72,206,208,1) 35%, 
+rgba(127,224,236,1) 40%, 
+rgba(77,193,224,1) 50%, 
+rgba(35,166,213,1) 60%, 
+rgba(128,132,239,1) 70%, 
+rgba(51,176,217,1) 90%, 
+rgba(209,127,244,1) 100%);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$base-theme: mat-light-theme($primary-palette, $accent-palette, $warn-palette);
+$mat-light-theme-foreground: (
+  base:              $text,
+  divider:           rgba($text, 0.12),
+  dividers:          rgba($text, 0.12),
+  disabled:          rgba($text, 0.38),
+  disabled-button:   rgba($text, 0.38),
+  disabled-text:     rgba($text, 0.38),
+  hint-text:         rgba($text, 0.38),
+  secondary-text:    rgba($text, 0.54),
+  icon:              rgba($text, 0.54),
+  icons:             rgba($text, 0.54),
+  text:              rgba($text, 0.87),
+  slider-off:        rgba($text, 0.26),
+  slider-off-active: rgba($text, 0.38),
+);
+$theme: map-merge($base-theme, (foreground: $mat-light-theme-foreground));
+
+// Create custom typography
+$typography: mat-typography-config(
+    $font-family: 'Raleway, sans-serif'
+);
+
+@font-face {
+  font-family: 'Raleway', sans-serif;
+}
+

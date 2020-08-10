@@ -17,7 +17,7 @@ export class BusinessHoursCalculatorComponent implements OnInit {
   message: string = "";
   subMessage: string = "";
   isBusinessHours: boolean;
-  date: Date;
+  date: Date = new Date();
   dateControl = new FormControl(new Date()); // Sets the default date to now
 
   constructor(
@@ -27,6 +27,7 @@ export class BusinessHoursCalculatorComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.calculateBusinessHours(this.date);
     this.dateControl.valueChanges.subscribe(value => {
       this.date = value,
       this.calculateBusinessHours(this.date)
@@ -41,7 +42,7 @@ export class BusinessHoursCalculatorComponent implements OnInit {
       this.subMessage = "We will be open next at " + this.getNextOpenTime(date);
       this.isBusinessHours = false;
     } else if (holiday) {
-      this.message = "We are not open. Today is " + holiday.name;
+      this.message = "We are not open because it is " + holiday.name;
       this.subMessage = "We will be open next at " + this.getNextOpenTime(date);
       this.isBusinessHours = false;
     } else if (this.isWorkHours(date)) {
