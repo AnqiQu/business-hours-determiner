@@ -1,8 +1,17 @@
-<mat-form-field>
-  <input matInput [ngxMatDatetimePicker]="picker"
-         placeholder="Select a date and time"
-         [formControl]="dateControl"
-         [disabled]="disabled">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <ngx-mat-datetime-picker #picker [enableMeridian]="true"></ngx-mat-datetime-picker>
-</mat-form-field>
+<div>
+  <div>
+    <mat-form-field>
+      <label for="dateTime">Select a date and time</label>
+      <input matInput 
+            id="dateTime"
+            [ngxMatDatetimePicker]="picker"
+            [formControl]="dateControl">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker #picker [enableMeridian]="true"></ngx-mat-datetime-picker>
+    </mat-form-field>
+  </div>
+  <span *ngIf="date">Selected time: <strong>{{ date.toLocaleString() }}</strong></span>
+  <h2>{{ message }}</h2>
+  <h5>{{ subMessage }}</h5>
+</div>
+
