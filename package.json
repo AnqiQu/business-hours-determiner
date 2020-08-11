@@ -26,6 +26,7 @@
     "@types/jquery": "^3.5.1",
     "bootstrap": "^4.5.2",
     "date-holidays": "^1.6.2",
+    "jasmine": "^3.6.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "public-holidays": "^0.2.2",

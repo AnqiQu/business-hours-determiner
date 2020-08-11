@@ -2,6 +2,8 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine"
@@ -9,7 +11,9 @@
   },
   "files": [
     "src/test.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "src/app/components/business-hours-calculator/business-hours-calculator.spec.ts",
+    "src/app/app.component.spec.ts"
   ],
   "include": [
     "src/**/*.spec.ts",
