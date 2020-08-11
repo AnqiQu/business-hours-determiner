@@ -23,6 +23,7 @@
     "@angular/platform-browser": "~10.0.6",
     "@angular/platform-browser-dynamic": "~10.0.6",
     "@angular/router": "~10.0.6",
+    "@types/jquery": "^3.5.1",
     "bootstrap": "^4.5.2",
     "date-holidays": "^1.6.2",
     "jquery": "^3.5.1",

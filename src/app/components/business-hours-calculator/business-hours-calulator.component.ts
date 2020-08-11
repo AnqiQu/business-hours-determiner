@@ -39,26 +39,28 @@ export class BusinessHoursCalculatorComponent implements OnInit {
     if (!this.isWorkDay(date)) {
       this.message = "We are not open on this day :(";
       this.subMessage = "We will be open next at " + this.getNextOpenTime(date);
-      this.isBusinessHours = false;
+      this.isBusinessHours = BusinessStatus.closed;
     } else if (holiday) {
       this.message = "We are not open because it is " + holiday.name;
       this.subMessage = "We will be open next at " + this.getNextOpenTime(date);
-      this.isBusinessHours = false;
+      this.isBusinessHours = BusinessStatus.closed;
     } else if (this.isWorkHours(date)) {
       if (this.isBreak(date)) {
         this.message = "We are open but currently on a short break";
         this.subMessage = "We will be open next at " + this.getNextOpenTime(date);
-        this.isBusinessHours = false;
+        this.isBusinessHours = BusinessStatus.break;
       } else {
         this.message = "We are open!";
         this.subMessage = "We will be open until " + this.getNextOpenTime(date);
-        this.isBusinessHours = true;
+        this.isBusinessHours = BusinessStatus.open;
       }
     } else {
       this.message = "We are not open during these hours :(";
       this.subMessage = "We will be open next at " + this.getNextOpenTime(date);
-      this.isBusinessHours = false;
+      this.isBusinessHours = BusinessStatus.closed;
     }
+
+    this.status.emit(this.isBusinessHours);
   }
 
   isWorkDay(date: Date): boolean {

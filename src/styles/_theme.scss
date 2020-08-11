@@ -13,18 +13,6 @@ $text: $space-cadet;
 $warn-palette: mat-palette($crimson-palette);
 $warn: $crimson;
 
-$background-gradient: linear-gradient(-45deg, 
-rgba(35,213,171,1) 0%, 
-rgba(35,194,188,1) 10%, 
-rgba(52,177,217,1) 20%, 
-rgba(72,206,208,1) 35%, 
-rgba(127,224,236,1) 40%, 
-rgba(77,193,224,1) 50%, 
-rgba(35,166,213,1) 60%, 
-rgba(128,132,239,1) 70%, 
-rgba(51,176,217,1) 90%, 
-rgba(209,127,244,1) 100%);
-
 // Create the theme object (a Sass map containing all of the palettes).
 $base-theme: mat-light-theme($primary-palette, $accent-palette, $warn-palette);
 $mat-light-theme-foreground: (
@@ -52,4 +40,37 @@ $typography: mat-typography-config(
 @font-face {
   font-family: 'Raleway', sans-serif;
 }
+
+$blue-background-gradient: linear-gradient(-45deg, 
+rgb(35, 213, 198) 0%, 
+rgb(35, 170, 194) 10%, 
+rgba(52,177,217,1) 20%, 
+rgb(95, 224, 226) 35%, 
+rgb(105, 217, 231) 40%, 
+rgba(77,193,224,1) 50%, 
+rgba(35,166,213,1) 60%, 
+rgba(128,132,239,1) 70%, 
+rgba(51,176,217,1) 90%, 
+rgba(209,127,244,1) 100%);
+
+$red-background-gradient: linear-gradient(45deg, 
+rgba(139,68,179,0.8) 0%, 
+rgba(158,62,151,1) 10%, 
+rgba(183,55,114,0.8) 15%, 
+rgba(214,50,84,0.8) 40%, 
+rgba(217,60,85,0.8) 60%, 
+rgba(229,107,87,0.8) 75%, 
+rgba(240,149,90,1) 95%, 
+rgba(248, 186, 62, 0.8) 100%);
+
+$green-background-gradient: linear-gradient(-60deg, 
+rgba(76,230,204,1) 0%, 
+rgba(139,238,191,1) 10%, 
+rgba(206,248,174,0.9) 25%, 
+rgba(106,230,146,0.8) 40%, 
+rgba(48,211,168,1) 55%, 
+rgba(59,207,187,0.9) 75%, 
+rgba(67,187,228,0.9) 85%, 
+rgba(68,245,253,1) 95%, 
+rgba(144,205,250,1) 100%);
 

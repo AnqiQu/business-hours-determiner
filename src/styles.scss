@@ -28,10 +28,25 @@ body {
 
 .app-body {
     width: 100%;
-    min-height: 100vh;
-    background: $background-gradient;
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    min-height: 100vh; 
+}
+
+.blue-gradient {
+    background: $blue-background-gradient;
+    background-size: 500% 500%;
+    animation: gradient 15s ease infinite alternate;
+}
+
+.green-gradient {
+    background: $green-background-gradient;
+    background-size: 500% 500%;
+    animation: gradient 15s ease infinite alternate;
+}
+
+.red-gradient {
+    background: $red-background-gradient;
+    background-size: 500% 500%;
+    animation: gradient 15s ease infinite alternate; 
 }
 
 @keyframes gradient {
