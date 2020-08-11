@@ -2,8 +2,8 @@ import { Component, OnInit, Output, EventEmitter, NgZone } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import * as data from "../../data/business-hours.json";
 import { DayOfWeek } from "../../enums/day-of-week";
+import { BusinessStatus } from "../../enums/business-status";
 import { HttpClient } from '@angular/common/http';
-import { empty } from 'rxjs';
 
 @Component({
   selector: 'business-hours-calculator',
@@ -15,9 +15,11 @@ export class BusinessHoursCalculatorComponent implements OnInit {
 
   message: string = "";
   subMessage: string = "";
-  isBusinessHours: boolean;
+  isBusinessHours: BusinessStatus;
   date: Date = new Date();
   dateControl = new FormControl(new Date()); // Sets the default date to now
+
+  @Output() status = new EventEmitter<BusinessStatus>();
 
   constructor(
     private http: HttpClient, 
@@ -28,8 +30,14 @@ export class BusinessHoursCalculatorComponent implements OnInit {
   ngOnInit() {
     this.calculateBusinessHours(this.date);
     this.dateControl.valueChanges.subscribe(value => {
-      this.date = value,
-      this.calculateBusinessHours(this.date)
+      try {
+        this.date = value;
+        this.calculateBusinessHours(this.date)
+      } catch (err) {
+        this.message = "Please select a date and time";
+        this.subMessage = "";
+        console.log(err);
+      }
     })
   }
 
